@@ -1,0 +1,23 @@
+---
+declared-services:
+  sample-node-red-cloudantNoSQLDB:
+    label: cloudantNoSQLDB
+    plan: Lite
+  SlackBot-conversation:
+    label: conversation
+    plan: free
+  SlackBot-watson_vision_combined:
+    label: watson_vision_combined
+    plan: free
+  SlackBot-natural-language-understanding:
+    label: natural-language-understanding
+    plan: free
+applications:
+- memory: 512M
+  services:
+    - sample-node-red-cloudantNoSQLDB
+    - SlackBot-conversation
+    - SlackBot-watson_vision_combined
+    - SlackBot-natural-language-understanding
+  env:
+    NODE_RED_STORAGE_NAME: sample-node-red-cloudantNoSQLDB
